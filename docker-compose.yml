@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+    volumes:
+      - oge_sqlite_data:/app/server/data
+    restart: unless-stopped
+
+volumes:
+  oge_sqlite_data:
