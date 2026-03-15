@@ -3,7 +3,7 @@ import { checkTask, getMeta, getPracticeTask } from '../api';
 import TaskPrompt from '../components/TaskPrompt';
 
 export default function PracticePage() {
-  const [meta, setMeta] = useState({ examTaskCount: 15 });
+  const [meta, setMeta] = useState({ examTaskCount: 16 });
   const [examNumber, setExamNumber] = useState(1);
   const [task, setTask] = useState(null);
   const [answer, setAnswer] = useState('');
@@ -13,7 +13,7 @@ export default function PracticePage() {
   const [error, setError] = useState('');
 
   const examNumberOptions = useMemo(() => {
-    const count = Number(meta?.examTaskCount || 15);
+    const count = Number(meta?.examTaskCount || 16);
     return Array.from({ length: count }, (_, idx) => idx + 1);
   }, [meta]);
 

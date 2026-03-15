@@ -19,7 +19,7 @@ const VARIANTS = [
   { sourceId: 26758666, label: 'Вариант 2516' }
 ];
 
-const TASK_LIMIT = 15;
+const TASK_LIMIT = 16;
 const AUTO_CHECK_LIMIT = 12;
 const responseCache = new Map();
 const imageCache = new Map();
@@ -279,7 +279,7 @@ async function main() {
       extractedAt: new Date().toISOString(),
       variantSourceIds: VARIANTS.map((variant) => variant.sourceId),
       notes:
-        'ОГЭ информатика, варианты 2507-2516, задания 1-15; задачи 13-15 без автопроверки; картинки скачаны локально.'
+        'ОГЭ информатика, варианты 2507-2516, задания 1-16; задачи 13-16 без автопроверки; картинки скачаны локально.'
     },
     examTaskCount: TASK_LIMIT,
     autoCheckTaskCount: AUTO_CHECK_LIMIT,

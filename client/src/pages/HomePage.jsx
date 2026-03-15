@@ -16,7 +16,7 @@ export default function HomePage() {
       })
       .catch(() => {
         if (!cancelled) {
-          setMeta({ examTaskCount: 15, variantsCount: 10, examDurationSeconds: 9000 });
+          setMeta({ examTaskCount: 16, variantsCount: 10, examDurationSeconds: 9000 });
         }
       });
 
@@ -37,7 +37,7 @@ export default function HomePage() {
         </p>
         <div className="hero-badges">
           <span>{meta?.variantsCount ?? 10} вариантов</span>
-          <span>{meta?.examTaskCount ?? 15} заданий в варианте</span>
+          <span>{meta?.examTaskCount ?? 16} заданий в варианте</span>
           <span>Таймер 2:30</span>
         </div>
         <div className="hero-actions">
