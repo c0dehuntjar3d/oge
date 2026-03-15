@@ -33,6 +33,9 @@ docker compose up --build
 После запуска сайт доступен на:
 - `http://localhost:3000`
 
+Для деплоя на VPS по домену см.:
+- `DEPLOY.md`
+
 ## Локальный запуск без Docker
 
 ### 1) Backend

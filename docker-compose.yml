@@ -4,12 +4,34 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
+    expose:
+      - "3000"
     environment:
       PORT: 3000
     volumes:
       - oge_sqlite_data:/app/server/data
     restart: unless-stopped
 
+  caddy:
+    image: caddy:2
+    profiles:
+      - prod
+    depends_on:
+      - app
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+
 volumes:
   oge_sqlite_data:
+  caddy_data:
+  caddy_config:
